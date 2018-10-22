@@ -13,6 +13,7 @@ build_requires:
   - CMake
   - "Xcode:(osx.*)"
 env:
+  CXXFLAGS: "${CXXFLAGS}"
   ALICE_ROOT: "$ALIROOT_ROOT"
 prepend_path:
   ROOT_INCLUDE_PATH: "$ALIROOT_ROOT/include"
