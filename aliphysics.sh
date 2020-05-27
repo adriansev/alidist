@@ -10,7 +10,6 @@ build_requires:
   - "Xcode:(osx.*)"
 source: https://github.com/alisw/AliPhysics
 env:
-  CXXFLAGS: "${CXXFLAGS}"
   ALICE_PHYSICS: "$ALIPHYSICS_ROOT"
 prepend_path:
   ROOT_INCLUDE_PATH: "$ALIPHYSICS_ROOT/include"
@@ -37,6 +36,7 @@ if [[ $CMAKE_BUILD_TYPE == COVERAGE ]]; then
   source $ALIROOT_ROOT/etc/gcov-setup.sh
 fi
 
+export CXXFLAGS="${CXXFLAGS} ${MYCXXFLAGS}"
 cmake "$SOURCEDIR"                                                 \
       -DCMAKE_INSTALL_PREFIX="$INSTALLROOT"                        \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON                           \

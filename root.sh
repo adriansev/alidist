@@ -103,6 +103,8 @@ else
 fi
 
 unset DYLD_LIBRARY_PATH
+
+export CXXFLAGS="${CXXFLAGS} ${MYCXXFLAGS} -O2"
 # Standard ROOT build
 cmake $SOURCEDIR                                                                       \
       ${CMAKE_GENERATOR:+-G "$CMAKE_GENERATOR"}                                        \

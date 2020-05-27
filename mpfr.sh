@@ -11,6 +11,7 @@ rsync -a --delete --exclude '**/.git' $SOURCEDIR/ ./
 perl -p -i -e 's/ doc / /' Makefile.am
 autoreconf -ivf
 
+export CXXFLAGS="${CXXFLAGS} ${MYCXXFLAGS}"
 ./configure --prefix=$INSTALLROOT    \
             --disable-shared         \
             --enable-static          \

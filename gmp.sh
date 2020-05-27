@@ -12,6 +12,7 @@ case $ARCHITECTURE in
   *) MARCH= ;;
 esac
 
+export CXXFLAGS="${CXXFLAGS} ${MYCXXFLAGS}"
 $SOURCEDIR/configure --prefix=$INSTALLROOT \
                      --enable-cxx \
                      --enable-static \

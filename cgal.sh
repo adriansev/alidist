@@ -31,6 +31,7 @@ export MPFR_INC_DIR="${MPFR_ROOT}/include"
 export GMP_LIB_DIR="${GMP_ROOT}/lib"
 export GMP_INC_DIR="${GMP_ROOT}/include"
 
+export CXXFLAGS="${CXXFLAGS} ${MYCXXFLAGS}"
 cmake . \
       -DCMAKE_INSTALL_PREFIX:PATH="${INSTALLROOT}" \
       -DCMAKE_INSTALL_LIBDIR:PATH="lib" \

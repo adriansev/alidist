@@ -13,7 +13,6 @@ build_requires:
   - CMake
   - "Xcode:(osx.*)"
 env:
-  CXXFLAGS: "${CXXFLAGS}"
   ALICE_ROOT: "$ALIROOT_ROOT"
 prepend_path:
   ROOT_INCLUDE_PATH: "$ALIROOT_ROOT/include"
@@ -57,6 +56,7 @@ if [ $FVERSION -ge 10 ]; then
    SPECIALFFLAGS=1
 fi
 
+export CXXFLAGS="${CXXFLAGS} ${MYCXXFLAGS}"
 cmake $SOURCEDIR                                                     \
       -DCMAKE_INSTALL_PREFIX="$INSTALLROOT"                          \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON                             \
