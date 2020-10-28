@@ -104,6 +104,7 @@ fi
 unset DYLD_LIBRARY_PATH
 # Standard ROOT build
 cmake $SOURCEDIR                                                                       \
+      -Dimt=OFF                                                                        \
       ${CMAKE_GENERATOR:+-G "$CMAKE_GENERATOR"}                                        \
       -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE                                             \
       -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                                              \
